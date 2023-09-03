@@ -1,0 +1,14 @@
+@keyframes toggle{
+    0% {
+transform: translateX(11rem);
+    }
+    100%{
+        transform: translateX(-5rem);
+    }
+}
+.animation{
+    /* transition:all  10s; */
+    /* transform: translateX(-11rem); */
+    /* background-color: ; */
+    animation: toggle 0.5s forwards;
+}

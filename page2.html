@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./page2.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body class=" bg-stone-200">
+    <!-- Slideshow container -->
+    <div class="slideshow-container bg-white relative m-auto w-11/12 md:w-2/3 lg:w-3/5 xl:w-1/3 mt-10 rounded-md">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade  p-4 px-10 text-xl">
+            <h1 class=" text-center m-5 text-2xl font-bold">Create a Project</h1>
+            <label class=" block mt-4" for="name">Project name</label>
+            <input class=" block border-2 rounded mt-2 w-full text-sm p-2" placeholder="Enter project name here"
+                type="text">
+            <label class=" block mt-4">Client</label>
+            <div>
+                <select class=" border-2 rounded  md:w-2/5 mt-2 p-2 text-sm ">
+                    <option value="option 1">Select a client</option>
+                    <option value="option 1">option 2</option>
+                    <option value="option 1">option 3</option>
+                </select>
+                <span>or</span>
+                <input class=" border-2 rounded w-[31vw] md:w-2/5 p-2 text-sm  mt-2" type="text" value=" + new client">
+            </div>
+            <label class=" block mt-4">Dates</label>
+            <input class=" border-2 rounded w-[47%] mt-2 md:text-sm" type="date"> - <input
+                class="md:text-sm mt-2 border-2 rounded  w-[47%]" type="date">
+            <label class="block mt-4">Notes</label>
+            <textarea class=" border-2 rounded mt-2 w-full text-sm p-2" placeholder="Optional" rows="5"></textarea>
+        </div>
+
+
+
+        <div class="mySlides fade  p-4">
+            <h1 class=" text-center m-5 text-2xl font-bold">Project type</h1>
+            <p class="text-sm text-center mb-4">Don't panic - You can alos customize this types in settings</p>
+            <div class="flex justify-center">
+                <button class="mbtn m-0 border-y-2 rounded-l-md border-l-2 py-2 w-[32%] hover:bg-sky-200 selected" onclick="selected()">Times & Material</button>
+                <button class="mbtn m-0 border-2 py-2 w-[33%] hover:bg-sky-200 ">Fixed Fee</button>
+                <button class="mbtn m-0 border-y-2 rounded-r-md border-r-2 py-2 w-[32%] hover:bg-sky-200">Non-Billable</button>
+            </div>
+            <h1 class=" font-semibold mt-10 mx-4">Hourly</h1>
+            <p class="mx-4">We need hourly rates to track your project's billable amount.</p>
+            <div class="flex mt-2 mx-4">
+                <select class=" border-2 rounded mt-2 p-2 text-sm w-3/5 ">
+                    <option value="option 1">Project hourly rate</option>
+                    <option value="option 1">option 2</option>
+                    <option value="option 1">option 3</option>
+                </select>
+                <div class="flex w-3/5">
+                    <select class="mt-2 p-2 text-sm border-y-2 border-l-2 rounded-l-md" id="currency" name="currency">
+                        <!-- <option value="">currency</option> -->
+                        <option value="INR">₹</option>
+                        <option value="GBP">£</option>
+                        <option value="USD">$</option>
+                    </select>
+                    <input class="mt-2 p-2 border-2 rounded-r-md w-1/2 appearance-none" type="number">
+                </div>
+            </div>
+            <h1 class="mt-4 font-semibold mx-4">Budget</h1>
+            <p class="mx-4">We need hourly rates to track your project's billable amount.</p>
+            <select class="block  border-2 rounded mt-4 mx-4 p-2 text-sm w-3/5 ">
+                <option value="option 1">Hours per person</option>
+                <option value="option 1">option 2</option>
+                <option value="option 1">option 3</option>
+            </select>
+            <div class="mt-4 mx-4">
+                <input class="h-4 w-4 align-middle" type="checkbox"><span> Budget resets every month</span>
+            </div>
+            <div class="mx-4">
+                <input class="h-4 w-4 align-middle" type="checkbox"> Send email alerts if project exceeds <input
+                    class="w-12 rounded text-center border-2" type="number"> % of budget.
+            </div>
+        </div>
+
+        <div class="mySlides fade p-4 px-10 h-[30rem]">
+            <h1 class="font-bold text-xl text-center m-4">Select a view</h1>
+            <p class="text-center mt-2">You can also customize this view in settings</p>
+            <div class="flex justify-around mt-10">
+                <div class="mx-2">
+                    <div class=" w-40 border-4 border-neutral-500 rounded-lg p-2 hover:border-sky-400"><img class="w-4/5 m-auto" src="./list.png" alt=""></div>
+                    <h1 class="text-center text-lg font-semibold">
+                        List
+                    </h1>
+                </div>
+                <div class="mx-2">
+                    <div class="w-[11rem] border-4 border-neutral-500 rounded-lg p-2 hover:border-sky-400"><img src="./board.png" alt=""></div>
+                    <h1 class="text-center text-lg font-semibold">Board</h1>
+                </div>
+            </div>
+        </div>
+        <div class="mySlides fade p-4 px-10 ">
+            <h1 class="font-bold text-xl text-center m-4">Who can mmanage projects</h1>
+            <p class="text-center mt-2">Don't panic - You can also customize this permissions in settings</p>
+            <div class="flex p-4 border-2 items-center rounded-lg mt-10 hover:border-sky-400">
+                <div class="text-5xl mx-4"><i class="bi bi-unlock-fill"></i></div>
+                <div>
+                    <h1 class="text-lg font-semibold">Everyone</h1>
+                    <p>All users can now to see it, but guests cannot access the projects.</p>
+                </div>
+            </div>
+            <div class="flex p-4 border-2 items-center rounded-lg mt-10 hover:border-sky-400">
+                <div class="text-5xl mx-4"><i class="bi bi-person-circle"></i></div>
+                <div>
+                    <h1 class="text-lg font-semibold">Only Admin's</h1>
+                    <p>Only admins can manage everything.</p>
+                </div>
+            </div>
+            <div class="flex p-4 border-2 items-center rounded-lg mt-10 hover:border-sky-400">
+                <div class="text-5xl mx-4"><i class="bi bi-people"></i></div>
+                <div>
+                    <h1 class="text-lg font-semibold">Only to Specific people</h1>
+                    <p>Only some specific people can see it.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <div class="flex justify-between">
+            <a class="prev m-4 w-20 rounded text-center text-lg py-2" onclick="plusSlides(-1)">&lt; back</a>
+                    <a class="next m-4 bg-sky-500 w-20 rounded text-center text-lg py-2"
+                        onclick="plusSlides(1)">next</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+
+    </div>
+    <script src="./page2.js"></script>
+</body>
+
+</html>
